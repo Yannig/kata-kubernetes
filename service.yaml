@@ -14,5 +14,3 @@ spec:
     name: smtp
     protocol: TCP
     targetPort: smtp
-  selector:
-    app: mailpit
