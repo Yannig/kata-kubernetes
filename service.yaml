@@ -9,7 +9,7 @@ spec:
   - port: 8025
     name: http
     protocol: TCP
-    targetPort: http
+    targetPort: 80
   - port: 1025
     name: smtp
     protocol: TCP
