@@ -17,6 +17,9 @@ spec:
       containers:
       - image: docker.io/axllent/mailpit:v1.20
         name: mailpit
+        envFrom:
+          - configMapRef:
+              name: mailpit
         ports:
           - protocol: TCP
             name: http
