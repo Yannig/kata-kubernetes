@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mailpit
+  name: mailpit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mailpit
+  template:
+    metadata:
+      labels:
+        app: mailpit
+    spec:
+      containers:
+      - image: docker.io/axllent/mailpit:v1.20
+        name: mailpit
+        ports:
+          - protocol: TCP
+            name: http
+            containerPort: 8025
+          - protocol: TCP
+            name: smtp
+            containerPort: 1025
+        startupProbe: &probe
+          httpGet:
+            port: http
+            path: /
+        readinessProbe: &ready-probe
+          <<: *probe
+          initialDelaySeconds: 0
+        livenessProbe: *ready-probe
