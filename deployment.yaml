@@ -20,7 +20,7 @@ spec:
         ports:
           - protocol: TCP
             name: http
-            containerPort: 8025
+            containerPort: 8026
           - protocol: TCP
             name: smtp
             containerPort: 1025
