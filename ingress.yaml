@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: mailpit
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   rules:
     - host: "mailpit.192.168.49.2.nip.io"
       http:
