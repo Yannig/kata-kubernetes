@@ -14,6 +14,8 @@ spec:
       labels:
         app: mailpit
     spec:
+      nodeSelector:
+        foo: bar
       containers:
       - image: docker.io/axllent/mailpit:v1.20
         name: mailpit
